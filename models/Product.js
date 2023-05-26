@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-const DollSchema = new mongoose.Schema(
+const ProductSchema = new mongoose.Schema(
   {
-    dollName: {
+    productName: {
       type: String,
       required: true,
       unique: true,
@@ -21,7 +21,10 @@ const DollSchema = new mongoose.Schema(
     },
     imageUrl: {
       type: String,
-      //default: [],
+      required: true,
+    },
+    shop: {
+      type: String,
       required: true,
     },
   },
@@ -30,4 +33,4 @@ const DollSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Doll", DollSchema);
+export default mongoose.model("Product", ProductSchema);

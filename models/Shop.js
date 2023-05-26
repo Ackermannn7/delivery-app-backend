@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-const GallerySchema = new mongoose.Schema(
+const ShopSchema = new mongoose.Schema(
   {
-    imageUrl: {
+    shopName: {
       type: String,
       required: true,
       unique: true,
@@ -13,4 +13,4 @@ const GallerySchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Gallery", GallerySchema);
+export default mongoose.model("Shop", ShopSchema);
