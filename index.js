@@ -46,6 +46,7 @@ app.use("/photos", express.static("photos"));
 app.get("/products", ProductController.getAllProducts);
 app.get("/products/:id", ProductController.getOne);
 app.post("/products", checkAuth, ProductController.createProduct);
+app.get("/shops", ShopController.getAllShops);
 app.post("/shops", checkAuth, ShopController.createShop);
 
 // app.get("/gallery", GalleryController.getGallery);
