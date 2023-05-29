@@ -51,6 +51,7 @@ app.post("/shops", checkAuth, ShopController.createShop);
 
 // app.get("/gallery", GalleryController.getGallery);
 // app.post("/addPhoto", GalleryController.addPhoto);
+// app.get("/cart", CartController.getCart);
 
 app.post(
   "/auth/login",

@@ -2,7 +2,10 @@ import ProductModel from "../models/Product.js";
 
 export const getAllProducts = async (req, res) => {
   try {
-    const products = await ProductModel.find().exec();
+    console.log(req.query);
+    const products = req.query.shop
+      ? await ProductModel.find({ shop: req.query.shop }).exec()
+      : await ProductModel.find().exec();
     res.json(products);
   } catch (err) {
     console.log(err);
@@ -12,15 +15,6 @@ export const getAllProducts = async (req, res) => {
     });
   }
 };
-
-// export const getProductsByShop = (req, res)=>{
-//     try {
-//         const shopId = req.
-//         const products = await ProductModel.find().exec()
-//     } catch (err) {
-
-//     }
-// }
 
 export const getOne = async (req, res) => {
   try {
